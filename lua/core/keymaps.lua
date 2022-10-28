@@ -44,7 +44,7 @@ map('n', '<leader>q', ':qa!<CR>')
 
 -- Terminal mappings
 map('n', '<C-t>', ':Term<CR>', { noremap = true }) -- open
-map('t', '<Esc>', '<C-\\><C-n>') -- exit
+map('t', 'jk', '<C-\\><C-n>') -- exit
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
@@ -66,6 +66,12 @@ map('n', '<C-.>', ':Telescope diagnostics<CR>')
 -- Show full error popup
 map('n', 'gl', '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>')
 
-
 -- Rename variables
 map('n', 'rn', ':lua vim.lsp.buf.rename()<CR>')
+
+-- Show code action menu
+map('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
+
+-- Shift current visual block
+map('v', "<", "<gv")
+map('v', ">", ">gv")

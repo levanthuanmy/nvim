@@ -28,16 +28,6 @@ vim.opt.pastetoggle = '<F2>'
 map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
 map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
 
--- Reload configuration without restart nvim
-map('n', '<leader>r', ':so %<CR>')
-
--- Fast saving with <leader> and s
-map('n', '<leader>s', ':w<CR>')
-map('i', '<leader>s', '<C-c>:w<CR>')
-
--- Close all windows and exit from Neovim with <leader> and q
-map('n', '<leader>q', ':qa!<CR>')
-
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
@@ -48,8 +38,6 @@ map('t', 'jk', '<C-\\><C-n>') -- exit
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>') -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>') -- search file
 
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
@@ -58,10 +46,11 @@ map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
 map('i', 'jk', '<Esc>')
 
 -- Telescope
-map('n', '<C-p>', ':Telescope find_files<CR>')
-map('n', '<C-a>', ':Telescope live_grep<CR>')
-map('n', '<C-f>', ':Telescope current_buffer_fuzzy_find<CR>')
-map('n', '<C-.>', ':Telescope diagnostics<CR>')
+map('n', ' p', ':Telescope find_files hidden=true<CR>')
+map('n', ' a', ':Telescope live_grep<CR>')
+map('n', ' f', ':Telescope current_buffer_fuzzy_find<CR>')
+map('n', ' d', ':Telescope diagnostics<CR>')
+map('n', ' b', ':Telescope file_browser<CR>')
 
 -- Show full error popup
 map('n', 'gl', '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>')

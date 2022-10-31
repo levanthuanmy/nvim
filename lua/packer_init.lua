@@ -75,11 +75,6 @@ return packer.startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 
-  -- Color schemes
-  use 'navarasu/onedark.nvim'
-  use 'tanvirtin/monokai.nvim'
-  use { 'rose-pine/neovim', as = 'rose-pine' }
-
   -- LSP
   use 'neovim/nvim-lspconfig'
 
@@ -139,9 +134,13 @@ return packer.startup(function(use)
   use {
     'numToStr/Comment.nvim',
     config = function()
-      require('Comment').setup()
+      require('Comment').setup({
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      })
     end
   }
+
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 

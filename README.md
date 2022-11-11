@@ -17,3 +17,8 @@ My neovim configuration using Lua
 - `Ctrl + t`: Terminal
 
 ### Visual mode
+- `g + b`: Comment block
+- `g + c`: Comment lines
+
+### Insert mode
+- `Ctrl + 2`: Toggle suggestion

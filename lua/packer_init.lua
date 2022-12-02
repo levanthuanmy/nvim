@@ -66,9 +66,6 @@ return packer.startup(function(use)
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
-  -- Tag viewer
-  use 'preservim/tagbar'
-
   -- Treesitter interface
   use {
     'nvim-treesitter/nvim-treesitter',
@@ -77,6 +74,10 @@ return packer.startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+  })
 
   -- Autocomplete
   use {
@@ -121,9 +122,6 @@ return packer.startup(function(use)
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
 
-  -- Buffer Line
-  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
-
   -- Null Ls
   use 'jose-elias-alvarez/null-ls.nvim'
 
@@ -144,29 +142,20 @@ return packer.startup(function(use)
 
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
 
-  -- Spell checker
   use {
-    -- Optional but recommended
-    -- 'nvim-treesitter/nvim-treesitter',
-    'lewis6991/spellsitter.nvim',
+    "navarasu/onedark.nvim",
     config = function()
-      require('spellsitter').setup({
-        enabled = true,
-        debug = true
+      local onedark = require("onedark")
+      onedark.setup({
+        style = 'deep',
+        transparent = true,
+        lualine = {
+          transparent = true,
+        }
       })
+      onedark.load()
     end
   }
-
-  use {
-    "catppuccin/nvim",
-    as = "catppuccin",
-    config = function()
-      vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-      require("catppuccin").setup()
-      vim.api.nvim_command "colorscheme catppuccin"
-    end
-  }
-
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

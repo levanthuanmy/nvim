@@ -39,9 +39,6 @@ map('t', 'jk', '<C-\\><C-n>') -- exit
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>') -- open/close
 
--- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>') -- open/close
-
 -- jk in INSERT MODE to exit
 map('i', 'jk', '<Esc>')
 
@@ -54,12 +51,6 @@ map('n', ' b', ':Telescope file_browser<CR>')
 
 -- Show full error popup
 map('n', 'gl', '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>')
-
--- Rename variables
-map('n', 'rn', ':lua vim.lsp.buf.rename()<CR>')
-
--- Show code action menu
-map('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
 
 -- Shift current visual block
 map('v', "<", "<gv")

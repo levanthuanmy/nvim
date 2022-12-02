@@ -76,16 +76,15 @@ cmp.setup {
   },
 
   sorting = {
-    -- priority_weight = 1,
     comparators = {
-      -- require('cmp_tabnine.compare'),
+      compare.exact,
+      require('cmp_tabnine.compare'),
       -- compare.locality,
       -- compare.recently_used,
       -- compare.score,
       -- compare.sort_text,
       -- compare.offset,
       -- compare.order,
-      -- compare.exact,
       -- compare.kind,
       -- compare.length,
     },

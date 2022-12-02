@@ -8,11 +8,17 @@ local builtins = null_ls.builtins
 null_ls.setup {
   sources = {
     builtins.diagnostics.eslint_d.with({
-      diagnostics_format = '[eslint] #{m}\n(#{c})'
+      diagnostics_format = '[eslint_d] #{m}\n(#{c})'
     }),
-    builtins.diagnostics.fish,
+
     builtins.completion.luasnip,
-    builtins.formatting.prettierd
+    builtins.formatting.prettierd,
+
+    builtins.hover.dictionary,
+    builtins.hover.printenv,
+
+    builtins.code_actions.eslint_d,
+
   },
   on_attach = function(client, bufnr)
     if client.server_capabilities.documentFormattingProvider then

@@ -12,11 +12,13 @@ if not status_ok then
 end
 
 vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
+-- vim.opt.listchars:append "eol:↴"
+vim.opt.listchars:append "space: "
 
 indent_blankline.setup {
   char = "▏",
   use_treesitter = true,
+  show_end_of_line = false,
   show_first_indent_level = true,
   filetype_exclude = {
     'lspinfo',

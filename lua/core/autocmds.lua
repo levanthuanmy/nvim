@@ -69,3 +69,13 @@ autocmd('BufLeave', {
   pattern = 'term://*',
   command = 'stopinsert'
 })
+
+autocmd('ColorScheme', {
+  pattern = '*',
+  command = 'highlight NormalFloat guibg=none'
+})
+
+autocmd('ColorScheme', {
+  pattern = '*',
+  command = 'highlight FloatBorder guibg=none guifg=#ac5ad2'
+})

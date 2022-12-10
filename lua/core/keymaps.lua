@@ -24,10 +24,6 @@ map('n', '<leader>c', ':nohl<CR>')
 map('n', '<F2>', ':set invpaste paste?<CR>')
 vim.opt.pastetoggle = '<F2>'
 
--- Change split orientation
-map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
-map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
-
 -----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
@@ -48,10 +44,7 @@ map('n', ' a', ':Telescope live_grep<CR>')
 map('n', ' f', ':Telescope current_buffer_fuzzy_find<CR>')
 map('n', ' d', ':Telescope diagnostics<CR>')
 map('n', ' b', ':Telescope file_browser<CR>')
-
--- Show full error popup
 map('n', 'gl', '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>')
-
 -- Shift current visual block
 map('v', "<", "<gv")
 map('v', ">", ">gv")

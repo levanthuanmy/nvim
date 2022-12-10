@@ -69,13 +69,14 @@ cmp.setup {
   -- Load sources, see: https://github.com/topics/nvim-cmp
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    { name = 'luasnip', max_item_count = 3 },
     { name = 'path' },
     { name = 'buffer' },
     { name = 'cmp_tabnine' }
   },
 
   sorting = {
+    priority_weight = 2,
     comparators = {
       compare.exact,
       require('cmp_tabnine.compare'),
@@ -93,11 +94,11 @@ cmp.setup {
   window = {
     completion = {
       border = 'rounded',
-      winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None',
+      winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
     },
     documentation = {
       border = 'rounded',
-      winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None',
+      winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
     },
   },
 }

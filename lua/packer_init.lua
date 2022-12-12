@@ -114,7 +114,7 @@ return packer.startup(function(use)
   -- Colorizer
   use { 'norcalli/nvim-colorizer.lua' }
 
-  -- Fuzzy Finder
+  -- Fuzzy Finder  - Telescope
   use { 'nvim-telescope/telescope.nvim' }
   use { 'nvim-telescope/telescope-file-browser.nvim' }
 
@@ -151,6 +151,11 @@ return packer.startup(function(use)
       })
       onedark.load()
     end
+  }
+
+  use {
+    'CosmicNvim/cosmic-ui',
+    requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
   }
 
   -- Automatically set up your configuration after cloning packer.nvim

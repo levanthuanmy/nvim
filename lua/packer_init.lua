@@ -140,17 +140,6 @@ return packer.startup(function(use)
 
   use {
     "navarasu/onedark.nvim",
-    config = function()
-      local onedark = require("onedark")
-      onedark.setup({
-        style = 'deep',
-        transparent = true,
-        lualine = {
-          transparent = true,
-        }
-      })
-      onedark.load()
-    end
   }
 
   use {
@@ -158,6 +147,25 @@ return packer.startup(function(use)
     requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
   }
 
+  use {
+    "jcdickinson/codeium.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup({
+      })
+    end
+  }
+
+  use {
+    'VonHeikemen/fine-cmdline.nvim',
+    requires = {
+      { 'MunifTanjim/nui.nvim' }
+    }
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

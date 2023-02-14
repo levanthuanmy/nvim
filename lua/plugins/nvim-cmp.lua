@@ -69,9 +69,10 @@ cmp.setup {
   -- Load sources, see: https://github.com/topics/nvim-cmp
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'luasnip', max_item_count = 3 },
+    { name = 'luasnip', max_item_count = 3, dup = 0 },
     { name = 'path' },
     { name = 'buffer' },
+    { name = 'codeium' },
     { name = 'cmp_tabnine' }
   },
 
@@ -106,5 +107,5 @@ cmp.setup {
 vim.o.runtimepath = vim.o.runtimepath .. '~/.config/nvim/lua/friendly-snippets'
 
 local ls_vscode_loader = require('luasnip.loaders.from_vscode')
-ls_vscode_loader.load()
+ls_vscode_loader.lazy_load()
 -- luasnip.filetype_extend("all", { "_" })

@@ -159,13 +159,6 @@ return packer.startup(function(use)
       })
     end
   }
-
-  use {
-    'VonHeikemen/fine-cmdline.nvim',
-    requires = {
-      { 'MunifTanjim/nui.nvim' }
-    }
-  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

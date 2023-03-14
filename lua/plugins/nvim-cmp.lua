@@ -69,7 +69,7 @@ cmp.setup {
   -- Load sources, see: https://github.com/topics/nvim-cmp
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'luasnip', max_item_count = 3, dup = 0 },
+    { name = 'luasnip', max_item_count = 3, dup = 0, priority = 8 },
     { name = 'path' },
     { name = 'buffer' },
     { name = 'codeium' },
@@ -77,18 +77,15 @@ cmp.setup {
   },
 
   sorting = {
-    priority_weight = 2,
+    priority_weight = 1.0,
     comparators = {
       compare.exact,
       require('cmp_tabnine.compare'),
       -- compare.locality,
       -- compare.recently_used,
       -- compare.score,
-      -- compare.sort_text,
       -- compare.offset,
       -- compare.order,
-      -- compare.kind,
-      -- compare.length,
     },
   },
 

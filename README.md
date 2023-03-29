@@ -1,30 +1,4 @@
-# nvim
+# 💤 LazyVim
 
-My neovim configuration using Lua
-
-## Basic keymaps
-
-### Normal mode
-
-- `space + d`: Open diagnostics window
-- `space + b`: Open file browser window
-- `space + p`: Find files in current project
-- `space + a`: Search text in current project
-- `space + f`: Search text in current file
-- `g + c + a`: Open code action
-- `g + c + c`: Comment current line
-- `g + r + n`: Rename (like F2 in VSCode)
-- `g + l`: Hover diagnostic in current line
-- `Ctrl + n`: Toggle Nvim Tree
-- `Ctrl + t`: Terminal
-
-### Visual mode
-
-- `g + b`: Comment block
-- `g + c`: Comment lines
-
-### Insert mode
-
-- `Ctrl + 2`: Toggle suggestion
-
-### Explore more with `:imap`, `:nmap` and `:vmap`
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
